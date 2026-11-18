@@ -55,15 +55,48 @@ Create a structuring element (kernel) of suitable size.
 
 Compare the original, eroded, and dilated images.
 
-## Program
+## Program and output
 
 ## Developed By
 
-**Name:** ____________________________
+**Name:** Janani S
 
-**Register No:** ______________________
+**Register No:**212224230103
 
-## Output
+```
+import cv2
+import matplotlib.pyplot as plt
+img = cv2.imread("C:/Users/admin/OneDrive/Documents/Downloads/image 9.jpg")
+plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+plt.title("Original Image")
+plt.axis("off")
+plt.show()
+
+```
+<img width="307" height="516" alt="Screenshot 2026-11-18 091151" src="https://github.com/user-attachments/assets/e9e1ebca-4169-4484-a4f2-3a019b9e5dd3" />
+
+
+```
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+erosion = cv2.erode(img, kernel, iterations=1)
+plt.imshow(erosion, cmap="gray")
+plt.title("Image Erosion")
+plt.axis("off")
+plt.show()
+```
+
+<img width="282" height="502" alt="Screenshot 2026-11-18 091156" src="https://github.com/user-attachments/assets/bdd3d4c1-8923-49e1-91c1-084c08459d7c" />
+
+```
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
+dilation = cv2.dilate(img, kernel, iterations=1)
+plt.imshow(dilation, cmap="gray")
+plt.title("Image Dilation")
+plt.axis("off")
+plt.show()
+```
+<img width="272" height="502" alt="Screenshot 2026-11-18 091202" src="https://github.com/user-attachments/assets/9fe97944-bf76-4616-977a-8e376ba24e3e" />
+
 
 ### Original Image
 
